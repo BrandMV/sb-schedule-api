@@ -9,8 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Component
-@SuppressWarnings("unused")
+
 public class MockContactRepositoryImpl implements IContactRepository {
     private static final List<Contact> CONTACT_LIST;
 
