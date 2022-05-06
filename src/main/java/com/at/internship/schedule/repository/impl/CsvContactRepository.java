@@ -8,7 +8,6 @@ import com.at.internship.lib.specification.SpecificationUtils;
 
 import java.util.List;
 
-
 @Deprecated
 public class CsvContactRepository extends AbstractRepository<Contact, Integer> {
     private static int ID_SEQUENCE = 0;

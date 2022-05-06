@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
-@SuppressWarnings("unused")
-public class MockContactRepositoryImpl{
+@Deprecated
+public class MockContactRepositoryImpl {
     private static final List<Contact> CONTACT_LIST;
 
     static {

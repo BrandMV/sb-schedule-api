@@ -12,24 +12,23 @@ import java.util.Objects;
 @Data
 @NoArgsConstructor
 @Entity
-@Table(name = "tbl_contact") /**Mapea a una tabla con el nombre*/
 public class Contact {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @Column(nullable = false)
     private String firstName;
     @Column(nullable = false)
     private String lastName;
     private String emailAddress;
-    @Deprecated /**Adevertencia que un componente esta obsoleto y desaparecerá*/
+    @Deprecated
     private String phoneNumber;
     private LocalDate birthDay;
     @Column(insertable = false, updatable = false)
-    private LocalDateTime createData;
+    private LocalDateTime createDate;
     @Column(insertable = false)
     private LocalDateTime lastUpdateDate;
-    @Transient /**No se va a serializar, solo para usarse en la memoria*/
+    @Transient
     private List<ContactPhone> phoneNumbers;
 
     public Contact(Contact source) {
