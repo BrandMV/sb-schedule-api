@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/contact")
+@SuppressWarnings("unused")
 public class ContactController {
 
     private final IContactService contactService;
@@ -27,14 +28,12 @@ public class ContactController {
     }
 
     @GetMapping("/all")
-    public GenericResponse<List<ContactDto>> findAll() {
-        GenericResponse<List<ContactDto>> response = new GenericResponse<>();
-        response.setContent(contactService.findAll().stream().map(contactConverter::toContactDto).collect(Collectors.toList()));
-        return response;
+    public List<ContactDto> findAll() {
+        return contactService.findAll().stream().map(contactConverter::toContactDto).collect(Collectors.toList());
     }
 
     @PostMapping("/new")
-    public ContactDto create(@RequestBody @Valid ContactDto contact) throws IOException {
+    public ContactDto create(@RequestBody ContactDto contact) {
         return contactConverter.toContactDto(contactService.create(contactConverter.toContact(contact)));
     }
 

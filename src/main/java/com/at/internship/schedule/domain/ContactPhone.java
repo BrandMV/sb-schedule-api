@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 /**LLave primaria compuesta ej*/
+
 @Data
 @Entity
 public class ContactPhone {

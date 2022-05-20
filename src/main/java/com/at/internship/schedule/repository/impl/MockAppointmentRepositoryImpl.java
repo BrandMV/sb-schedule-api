@@ -9,7 +9,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class MockAppointmentRepositoryImpl implements IAppointmentRepository {
+import com.at.internship.schedule.domain.Appointment;
+import com.at.internship.schedule.repository.IAppointmentRepository;
+import org.springframework.stereotype.Component;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Component
+@SuppressWarnings("unused")
+@Deprecated
+public class MockAppointmentRepositoryImpl {
 
     private static final List<Appointment> APPOINTMENT_LIST;
 
